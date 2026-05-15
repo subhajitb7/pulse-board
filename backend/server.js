@@ -14,7 +14,12 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175'];
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:5175',
+  process.env.FRONTEND_URL,
+].filter(Boolean);
 
 const io = new Server(server, {
   cors: {
@@ -33,6 +38,10 @@ app.use(cookieParser());
 
 // Pass io to routes if needed
 app.set('io', io);
+
+app.get('/', (req, res) => {
+  res.json({ message: 'PulseBoard API is running' });
+});
 
 app.use('/api/auth', authRoutes);
 app.use('/api/polls', pollRoutes);
