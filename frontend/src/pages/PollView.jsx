@@ -136,7 +136,7 @@ const PollView = () => {
         {poll.questions.map((q, index) => (
           <div key={q._id} className={`glass-panel p-6 rounded-2xl transition-all ${validationErrors[q._id] ? 'ring-1 ring-red-500/30' : ''}`}>
             <h3 className="text-[15px] font-semibold text-white mb-4 tracking-tight">
-              <span className="text-cyan-400 mr-1.5 font-bold">{index + 1}.</span>
+              <span className="text-amber-400 mr-1.5 font-bold">{index + 1}.</span>
               {q.text}
               {q.isMandatory && <span className="text-red-400 ml-1">*</span>}
             </h3>
@@ -147,12 +147,12 @@ const PollView = () => {
                   key={opt}
                   className={`flex items-center p-3.5 rounded-xl border cursor-pointer transition-all ${
                     answers[q._id] === opt
-                      ? 'border-cyan-500/40 bg-cyan-500/[0.05]'
+                      ? 'border-amber-500/40 bg-amber-500/[0.05]'
                       : 'border-white/[0.04] hover:border-white/[0.1] hover:bg-white/[0.02]'
                   } ${isExpired ? 'pointer-events-none opacity-50' : ''}`}
                 >
                   <div className={`w-4 h-4 rounded-full border-2 mr-3.5 flex items-center justify-center flex-shrink-0 transition-all ${
-                    answers[q._id] === opt ? 'border-cyan-500 bg-cyan-500' : 'border-gray-700'
+                    answers[q._id] === opt ? 'border-amber-500 bg-amber-500' : 'border-gray-700'
                   }`}>
                     {answers[q._id] === opt && <div className="w-1.5 h-1.5 rounded-full bg-white"></div>}
                   </div>

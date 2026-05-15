@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full z-50 bg-[#06070a]/80 backdrop-blur-xl border-b border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-violet-500 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/30 transition-shadow">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-rose-500 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/30 transition-shadow">
             <Activity size={16} className="text-white" />
           </div>
           <span className="text-lg font-bold text-gradient tracking-tight">

@@ -87,9 +87,9 @@ const PollAnalytics = () => {
 
       {/* Stats */}
       <div className="grid sm:grid-cols-3 gap-3 mb-8">
-        <StatCard icon={<Users size={18} />} color="bg-cyan-500/[0.08] text-cyan-400" label="Responses" value={analytics.totalResponses} />
-        <StatCard icon={<BarChart3 size={18} />} color="bg-violet-500/[0.08] text-violet-400" label="Questions" value={poll.questions.length} />
-        <StatCard icon={<TrendingUp size={18} />} color="bg-emerald-500/[0.08] text-emerald-400" label="Status" value={isExpired ? 'Closed' : 'Live'} />
+        <StatCard icon={<Users size={18} />} color="bg-amber-500/[0.08] text-amber-400" label="Responses" value={analytics.totalResponses} />
+        <StatCard icon={<BarChart3 size={18} />} color="bg-orange-500/[0.08] text-orange-400" label="Questions" value={poll.questions.length} />
+        <StatCard icon={<TrendingUp size={18} />} color="bg-rose-500/[0.08] text-rose-400" label="Status" value={isExpired ? 'Closed' : 'Live'} />
       </div>
 
       {/* Questions */}
@@ -103,7 +103,7 @@ const PollAnalytics = () => {
             <div key={q._id} className="glass-panel p-6 rounded-2xl">
               <div className="flex items-start justify-between mb-5">
                 <h3 className="text-[15px] font-semibold text-white tracking-tight">
-                  <span className="text-cyan-400 mr-1.5 font-bold">Q{index + 1}.</span>{q.text}
+                  <span className="text-amber-400 mr-1.5 font-bold">Q{index + 1}.</span>{q.text}
                 </h3>
                 <span className="text-[10px] text-gray-700 flex-shrink-0 ml-3 uppercase tracking-wider font-medium">{totalAnswersForQ} answer{totalAnswersForQ !== 1 ? 's' : ''}</span>
               </div>
@@ -119,15 +119,15 @@ const PollAnalytics = () => {
                       <div className="flex justify-between items-center mb-1">
                         <span className={`text-[13px] ${isLeading ? 'text-white font-medium' : 'text-gray-400'}`}>
                           {opt}
-                          {isLeading && totalAnswersForQ > 0 && <span className="ml-2 text-[9px] text-cyan-400 font-semibold uppercase tracking-widest">Leading</span>}
+                          {isLeading && totalAnswersForQ > 0 && <span className="ml-2 text-[9px] text-amber-400 font-semibold uppercase tracking-widest">Leading</span>}
                         </span>
                         <div className="flex items-center gap-2">
-                          <span className={`text-[13px] font-bold ${isLeading ? 'text-cyan-300' : 'text-gray-600'}`}>{percentage}%</span>
+                          <span className={`text-[13px] font-bold ${isLeading ? 'text-amber-300' : 'text-gray-600'}`}>{percentage}%</span>
                           <span className="text-gray-700 text-[11px] w-8 text-right">({count})</span>
                         </div>
                       </div>
                       <div className="h-2 w-full bg-white/[0.03] rounded-full overflow-hidden">
-                        <div className={`h-full rounded-full transition-all duration-700 animate-bar ${isLeading ? 'bg-gradient-to-r from-cyan-500 to-violet-500' : 'bg-white/[0.06]'}`} style={{ width: `${percentage}%` }}></div>
+                        <div className={`h-full rounded-full transition-all duration-700 animate-bar ${isLeading ? 'bg-gradient-to-r from-amber-500 to-rose-500' : 'bg-white/[0.06]'}`} style={{ width: `${percentage}%` }}></div>
                       </div>
                     </div>
                   );

@@ -80,9 +80,9 @@ const Dashboard = () => {
       {/* Stats row */}
       {totalPolls > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-          <StatCard icon={<BarChart2 size={16} />} color="text-cyan-400 bg-cyan-500/[0.08]" label="Total Polls" value={totalPolls} />
-          <StatCard icon={<Zap size={16} />} color="text-emerald-400 bg-emerald-500/[0.08]" label="Active" value={activePolls} />
-          <StatCard icon={<Users size={16} />} color="text-violet-400 bg-violet-500/[0.08]" label="Responses" value={totalResponses} />
+          <StatCard icon={<BarChart2 size={16} />} color="text-amber-400 bg-amber-500/[0.08]" label="Total Polls" value={totalPolls} />
+          <StatCard icon={<Zap size={16} />} color="text-orange-400 bg-orange-500/[0.08]" label="Active" value={activePolls} />
+          <StatCard icon={<Users size={16} />} color="text-rose-400 bg-rose-500/[0.08]" label="Responses" value={totalResponses} />
           <StatCard icon={<TrendingUp size={16} />} color="text-amber-400 bg-amber-500/[0.08]" label="Avg / Poll" value={totalPolls > 0 ? Math.round(totalResponses / totalPolls) : 0} />
         </div>
       )}
@@ -140,12 +140,12 @@ const Dashboard = () => {
                 return (
                   <div key={poll._id} className="glass-panel rounded-2xl flex flex-col group overflow-hidden hover:-translate-y-0.5 transition-all duration-300">
                     {/* Status bar */}
-                    <div className={`h-[2px] w-full ${isExpired ? 'bg-gradient-to-r from-red-500/40 to-transparent' : 'bg-gradient-to-r from-cyan-500/40 to-transparent'}`}></div>
+                    <div className={`h-[2px] w-full ${isExpired ? 'bg-gradient-to-r from-red-500/40 to-transparent' : 'bg-gradient-to-r from-amber-500/40 to-transparent'}`}></div>
 
                     <div className="p-5 flex flex-col flex-grow">
                       {/* Title & status */}
                       <div className="flex justify-between items-start mb-1.5">
-                        <h3 className="text-[15px] font-semibold text-white leading-snug break-words pr-3 tracking-tight group-hover:text-cyan-100 transition-colors">{poll.title}</h3>
+                        <h3 className="text-[15px] font-semibold text-white leading-snug break-words pr-3 tracking-tight group-hover:text-amber-100 transition-colors">{poll.title}</h3>
                         <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider flex-shrink-0 ${isExpired ? 'pill-expired' : 'pill-active'}`}>
                           {isExpired ? 'Expired' : 'Active'}
                         </span>
@@ -191,7 +191,7 @@ const Dashboard = () => {
                           </div>
                           <div className="h-1 w-full bg-white/[0.03] rounded-full overflow-hidden">
                             <div
-                              className="h-full rounded-full bg-gradient-to-r from-cyan-500/60 to-violet-500/60 transition-all duration-500"
+                              className="h-full rounded-full bg-gradient-to-r from-amber-500/60 to-rose-500/60 transition-all duration-500"
                               style={{ width: `${Math.min(responses * 5, 100)}%` }}
                             ></div>
                           </div>
@@ -202,7 +202,7 @@ const Dashboard = () => {
                       <div className="flex gap-1.5 pt-3 border-t border-white/[0.04]">
                         <Link
                           to={`/poll/${poll._id}/analytics`}
-                          className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg bg-white/[0.03] hover:bg-cyan-500/[0.08] hover:text-cyan-400 text-gray-500 transition-all text-[12px] font-medium"
+                          className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg bg-white/[0.03] hover:bg-amber-500/[0.08] hover:text-amber-400 text-gray-500 transition-all text-[12px] font-medium"
                         >
                           <BarChart2 size={13} />
                           Analytics

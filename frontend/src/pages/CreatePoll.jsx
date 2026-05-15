@@ -98,7 +98,7 @@ const CreatePoll = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* General Info */}
         <div className="glass-panel p-7 rounded-2xl space-y-5">
-          <div className="flex items-center gap-2 text-cyan-400 border-b border-white/[0.04] pb-4">
+          <div className="flex items-center gap-2 text-amber-400 border-b border-white/[0.04] pb-4">
             <Settings size={16} />
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider">General</h2>
           </div>
@@ -118,8 +118,8 @@ const CreatePoll = () => {
             <div>
               <label className="block text-xs font-medium text-gray-500 mb-2.5 uppercase tracking-wider">Who can respond?</label>
               <div className="space-y-2">
-                <label className={`flex items-start gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${isAnonymous ? 'border-cyan-500/30 bg-cyan-500/[0.05]' : 'border-white/[0.05] hover:border-white/[0.1]'}`}>
-                  <div className={`w-4 h-4 mt-0.5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${isAnonymous ? 'border-cyan-500 bg-cyan-500' : 'border-gray-700'}`}>
+                <label className={`flex items-start gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${isAnonymous ? 'border-amber-500/30 bg-amber-500/[0.05]' : 'border-white/[0.05] hover:border-white/[0.1]'}`}>
+                  <div className={`w-4 h-4 mt-0.5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${isAnonymous ? 'border-amber-500 bg-amber-500' : 'border-gray-700'}`}>
                     {isAnonymous && <Check size={9} className="text-white" />}
                   </div>
                   <div>
@@ -130,13 +130,13 @@ const CreatePoll = () => {
                   </div>
                   <input type="radio" checked={isAnonymous} onChange={() => setIsAnonymous(true)} className="sr-only" />
                 </label>
-                <label className={`flex items-start gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${!isAnonymous ? 'border-cyan-500/30 bg-cyan-500/[0.05]' : 'border-white/[0.05] hover:border-white/[0.1]'}`}>
-                  <div className={`w-4 h-4 mt-0.5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${!isAnonymous ? 'border-cyan-500 bg-cyan-500' : 'border-gray-700'}`}>
+                <label className={`flex items-start gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${!isAnonymous ? 'border-amber-500/30 bg-amber-500/[0.05]' : 'border-white/[0.05] hover:border-white/[0.1]'}`}>
+                  <div className={`w-4 h-4 mt-0.5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${!isAnonymous ? 'border-amber-500 bg-amber-500' : 'border-gray-700'}`}>
                     {!isAnonymous && <Check size={9} className="text-white" />}
                   </div>
                   <div>
                     <span className="text-[13px] font-semibold text-white flex items-center gap-1.5">
-                      <Lock size={13} className="text-amber-400" /> Signed-in only
+                      <Lock size={13} className="text-rose-400" /> Signed-in only
                     </span>
                     <p className="text-[11px] text-gray-600 mt-0.5">One response per user</p>
                   </div>
@@ -155,7 +155,7 @@ const CreatePoll = () => {
         {/* Questions */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <HelpCircle size={16} className="text-cyan-400" />
+            <HelpCircle size={16} className="text-amber-400" />
             <h2 className="text-sm font-semibold text-white uppercase tracking-wider">Questions</h2>
             <span className="text-[11px] text-gray-600 ml-1">{questions.length}</span>
           </div>
@@ -190,14 +190,14 @@ const CreatePoll = () => {
                     )}
                   </div>
                 ))}
-                <button type="button" onClick={() => addOption(q.id)} className="text-cyan-400 hover:text-cyan-300 text-[12px] font-medium flex items-center gap-1 mt-2 ml-6">
+                <button type="button" onClick={() => addOption(q.id)} className="text-amber-400 hover:text-amber-300 text-[12px] font-medium flex items-center gap-1 mt-2 ml-6">
                   <Plus size={13} /> Add option
                 </button>
               </div>
 
               <div className="flex items-center gap-2.5 pt-3 border-t border-white/[0.03]">
                 <label className="flex items-center gap-2 cursor-pointer text-[12px] text-gray-500 hover:text-gray-400 transition-colors">
-                  <div className={`w-3.5 h-3.5 rounded border-[1.5px] flex items-center justify-center transition-all ${q.isMandatory ? 'border-cyan-500 bg-cyan-500' : 'border-gray-700'}`}>
+                  <div className={`w-3.5 h-3.5 rounded border-[1.5px] flex items-center justify-center transition-all ${q.isMandatory ? 'border-amber-500 bg-amber-500' : 'border-gray-700'}`}>
                     {q.isMandatory && <Check size={9} className="text-white" />}
                   </div>
                   Required
@@ -207,7 +207,7 @@ const CreatePoll = () => {
             </div>
           ))}
 
-          <button type="button" onClick={addQuestion} className="w-full py-3.5 border border-dashed border-white/[0.08] rounded-2xl text-gray-600 hover:text-cyan-400 hover:border-cyan-500/20 transition-all flex justify-center items-center gap-2 font-medium text-[13px]">
+          <button type="button" onClick={addQuestion} className="w-full py-3.5 border border-dashed border-white/[0.08] rounded-2xl text-gray-600 hover:text-amber-400 hover:border-amber-500/20 transition-all flex justify-center items-center gap-2 font-medium text-[13px]">
             <Plus size={16} /> Add question
           </button>
         </div>

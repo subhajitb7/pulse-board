@@ -37,7 +37,7 @@ const PollResults = () => {
           </div>
           <h2 className="text-xl font-bold text-white mb-2 tracking-tight">Unavailable</h2>
           <p className="text-gray-600 text-sm mb-6">{error}</p>
-          <button onClick={() => navigate(`/poll/${id}`)} className="text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors">&larr; Back to poll</button>
+          <button onClick={() => navigate(`/poll/${id}`)} className="text-amber-400 hover:text-amber-300 font-medium text-sm transition-colors">&larr; Back to poll</button>
         </div>
       </div>
     );
@@ -57,7 +57,7 @@ const PollResults = () => {
       {/* Summary */}
       <div className="flex justify-center gap-3 mb-10">
         <div className="glass-panel px-5 py-3.5 rounded-2xl flex items-center gap-3.5">
-          <div className="w-9 h-9 bg-cyan-500/[0.08] rounded-xl flex items-center justify-center text-cyan-400">
+          <div className="w-9 h-9 bg-amber-500/[0.08] rounded-xl flex items-center justify-center text-amber-400">
             <Users size={18} />
           </div>
           <div>
@@ -66,7 +66,7 @@ const PollResults = () => {
           </div>
         </div>
         <div className="glass-panel px-5 py-3.5 rounded-2xl flex items-center gap-3.5">
-          <div className="w-9 h-9 bg-violet-500/[0.08] rounded-xl flex items-center justify-center text-violet-400">
+          <div className="w-9 h-9 bg-orange-500/[0.08] rounded-xl flex items-center justify-center text-orange-400">
             <BarChart3 size={18} />
           </div>
           <div>
@@ -85,10 +85,10 @@ const PollResults = () => {
 
           return (
             <div key={q._id} className="glass-panel p-6 rounded-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/[0.02] rounded-full blur-[60px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/[0.02] rounded-full blur-[60px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
 
               <h3 className="text-[15px] font-semibold text-white mb-6 relative z-10 tracking-tight">
-                <span className="text-cyan-400 mr-1.5 font-bold">Q{index + 1}.</span>{q.text}
+                <span className="text-amber-400 mr-1.5 font-bold">Q{index + 1}.</span>{q.text}
               </h3>
 
               <div className="space-y-3.5 relative z-10">
@@ -107,12 +107,12 @@ const PollResults = () => {
                           )}
                         </span>
                         <div className="flex items-center gap-2">
-                          <span className={`font-bold ${isLeading ? 'text-cyan-300 text-base' : 'text-gray-600 text-[13px]'}`}>{percentage}%</span>
+                          <span className={`font-bold ${isLeading ? 'text-amber-300 text-base' : 'text-gray-600 text-[13px]'}`}>{percentage}%</span>
                           <span className="text-gray-700 text-[11px] w-12 text-right">{count} vote{count !== 1 ? 's' : ''}</span>
                         </div>
                       </div>
                       <div className="h-2 w-full bg-white/[0.03] rounded-full overflow-hidden border border-white/[0.02]">
-                        <div className={`h-full rounded-full animate-bar ${isLeading ? 'bg-gradient-to-r from-cyan-500 to-violet-500' : 'bg-white/[0.06]'}`} style={{ width: `${percentage}%` }}></div>
+                        <div className={`h-full rounded-full animate-bar ${isLeading ? 'bg-gradient-to-r from-amber-500 to-rose-500' : 'bg-white/[0.06]'}`} style={{ width: `${percentage}%` }}></div>
                       </div>
                     </div>
                   );

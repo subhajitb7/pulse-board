@@ -53,7 +53,7 @@ const AuthPage = () => {
           <div className="absolute top-0 left-0 w-full accent-line"></div>
 
           {/* Ambient glow */}
-          <div className="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500 rounded-full blur-[100px] opacity-[0.07] pointer-events-none"></div>
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-amber-500 rounded-full blur-[100px] opacity-[0.07] pointer-events-none"></div>
 
           <div className="relative z-10">
             <div className="mb-8">
@@ -152,7 +152,7 @@ const AuthPage = () => {
               <button
                 type="button"
                 onClick={toggleMode}
-                className="text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors"
+                className="text-amber-400 hover:text-amber-300 font-medium text-sm transition-colors"
               >
                 {isLogin ? 'Sign up' : 'Sign in'}
               </button>
